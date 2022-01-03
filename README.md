@@ -1,6 +1,6 @@
 # MERN_TaskTracker_App
 
-- In this app i have to add a backend and database to the app and make it fullstack.
+- In this app i have to add a backend and database to the privious completed Task Tracker app and make it fullstack.
 
 
 
