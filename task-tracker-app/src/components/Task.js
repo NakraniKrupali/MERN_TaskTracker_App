@@ -19,7 +19,7 @@ const Task = ({ task, onDelete, onToggle }) => {
       <p>{task.dayTime} 
       <h3><FaEdit
           style={{ color: "blue", cursor: "pointer" }}
-          onClick={() => navigate(`/updatetask/${task}`)}/></h3>
+          onClick={() => navigate('/updatetask',{ state: task})}/></h3>
         </p>
     </div>
   );
