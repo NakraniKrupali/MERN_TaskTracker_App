@@ -57,7 +57,7 @@ app.post("/api/addtask",(req,res)=>{
 app.put("/api/updatetask",async(req,res)=>{
     const user= req.body
     const updatedUser= await taskModel.findOneAndUpdate(
-        {_id:user._id},
+        {_id:user.id},
         {   text:user.text,
             dayTime:user.dayTime,
             reminder:user.reminder
