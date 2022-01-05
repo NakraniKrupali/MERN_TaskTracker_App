@@ -4,16 +4,18 @@ import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 const Update = (props) => {
-    const location = useLocation();
+  const {state} = useLocation();
+  var taskData=state;
+  //console.log(taskData);
+  
 
-   // console.log(location.pathname.match.params);
-   const taskData =[]
- // console.log(props.params.task)
   const navigate=useNavigate();
+  const id= taskData._id;
   const [text, setText] = useState(taskData.text);
   const [dayTime, setDay] = useState(taskData.dayTime);
   const [reminder, setReminder] = useState(taskData.reminder
     );
+   
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -22,7 +24,8 @@ const Update = (props) => {
       alert("Please add a task");
       return;
     }
-    axios.put("/api/updatetask/reminder",{ text, dayTime, reminder })
+ 
+    axios.put("/api/updatetask",{ id,text, dayTime, reminder })
     .then(res=>{console.log(res.data)
          if(res.data.code === 200){
              navigate('/task')
